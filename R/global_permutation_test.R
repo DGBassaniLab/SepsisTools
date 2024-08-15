@@ -178,7 +178,7 @@ global_permutation_test <- function(data_,
   #   # the vector. if so, the elements on the vector are all the same
   # }
 
-  p_value <- mean(teststat_null > teststat, na.rm = TRUE)
+  p_value <- mean(teststat_null >= teststat, na.rm = TRUE)
   mc_error <- sqrt(p_value*(1-p_value)/num_trials)
   num_stats <- length(teststat_null)
   num_obs <- nrow(standard_data)
